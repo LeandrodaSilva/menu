@@ -1,3 +1,4 @@
+import { env } from "./env.js";
 
 export class MenuElements{
   uiFood(name){
@@ -62,7 +63,7 @@ export default class Menu {
   }
 
   _buscar(nome){
-    $.get("http://localhost:3000/menu/?name="+nome, function (data) {
+    $.get(env.APP_URL + "menu/?name="+nome, function (data) {
       console.log(data)
     })
   }
