@@ -1,7 +1,7 @@
 {"menu": [
     {
       "id": 1,
-      "imagePath": "assets/img/foods/cupcake.png",
+      "imagePath": "assets/img/foods/cupcake.jpg",
       "name": "Cup Cake",
       "description": "Cup Cake recheado de Doce de Leite",
       "price": 8.7,
