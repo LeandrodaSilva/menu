@@ -65,6 +65,18 @@ export default class Create {
   }
 
   async _saveFood() {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      onOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer);
+        toast.addEventListener('mouseleave', Swal.resumeTimer);
+      }
+    });
+
     this._menu = new MenuObject(this._$form);
     this._menu.imagePath
     ? await toBase64(this._menu.imagePath).then(data => {
@@ -79,12 +91,10 @@ export default class Create {
       restaurantId: this._menu.restaurantId,
     })
     .done(() => {
-      Swal.fire({
-        title: 'Item Salvo!',
-        text: 'A comida foi salva.',
+      Toast.fire({
         icon: 'success',
-        confirmButtonText: 'OK'
-      })
+        title: 'A comida foi salva.'
+      });
     })
     .fail(() => {
       Swal.fire({
