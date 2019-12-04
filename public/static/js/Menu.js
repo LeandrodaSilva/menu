@@ -1,5 +1,4 @@
 import { env } from "./env.js";
-
 export class MenuElements{
   uiFood(name){
     let $inputName = document.createElement('input');
@@ -89,3 +88,4 @@ export default class Menu {
     });
   }
 }
+
