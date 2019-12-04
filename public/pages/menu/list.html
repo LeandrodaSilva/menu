@@ -17,7 +17,7 @@
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <title>Menu - Início</title>
+    <title>Menu - Listagem</title>
 </head>
 <body>
     <header id="header">
@@ -40,13 +40,13 @@
                         <a class="nav-link" href="/">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/menu/list.html">Listar</a>
+                        <a class="nav-link active" href="list.html">Listar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/menu/create.html">Cadastrar</a>
+                        <a class="nav-link" href="create.html">Cadastrar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/menu/edit.html">Editar</a>
+                        <a class="nav-link" href="edit.html">Editar</a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
@@ -63,65 +63,17 @@
         </nav>
     </header>
 
-    <main class="container col-11">
-        <fieldset>
-            <label>Cardápio</label>
-            <div id="carouselExampleInterval"
-                 class="carousel slide row d-flex justify-content-center"
-                 data-ride="carousel">
+<main>
+    <h1>Tela principal</h1>
+</main>
 
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-                </ol>
+<div id="listagem"></div>
 
-                <div class="carousel-inner col-6">
-
-                    <div class="carousel-item active" data-interval="5000">
-                        <img src="assets/img/foods/cupcake.jpg" class="d-block w-100" alt="...">
-                    </div>
-
-                    <div class="carousel-item" data-interval="5000">
-                        <img src="assets/img/foods/cupcake.jpg" class="d-block w-100" alt="...">
-                    </div>
-
-                    <div class="carousel-item" data-interval="5000">
-                        <img src="assets/img/foods/cupcake.jpg" class="d-block w-100" alt="...">
-                    </div>
-
-                </div>
-
-                <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-
-                <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-
-            </div>
-
-            <div>
-                <img src="assets/img/foods/cupcake.jpg" class="img-fluid" alt="Responsive image">
-            </div>
-        </fieldset>
-    </main>
-
-    <div id="listagem"></div>
-
-    <script type="module">
-        import Routes from "./static/js/Routes.js";
-        import Menu from "./static/js/Menu.js";
-
-        new Routes(
-            document.getElementById('header')
-        );
-        new Menu(
-          document.querySelector('#listagem'),
-          document.querySelector('#header'))
-    </script>
+<script type="module">
+    // import Menu from "./static/js/Menu.js";
+    // new Menu(
+    //     document.querySelector('#listagem'),
+    //     document.querySelector('#header'))
+</script>
 </body>
 </html>

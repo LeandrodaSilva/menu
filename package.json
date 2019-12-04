@@ -1,0 +1,26 @@
+{
+  "name": "menu",
+  "version": "1.0.0",
+  "description": "Projeto final de Web 1",
+  "main": "index.js",
+  "dependencies": {
+    "sweetalert2": "^9.4.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "./run.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeandrodaSilva/menu.git"
+  },
+  "keywords": [
+    "web1"
+  ],
+  "author": "Leandro da Silva, Álvaro Kenzo Ymagawa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeandrodaSilva/menu/issues"
+  },
+  "homepage": "https://github.com/LeandrodaSilva/menu#readme"
+}

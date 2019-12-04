@@ -1,4 +1,4 @@
-
+import { env } from "./env.js";
 export class MenuElements{
   uiFood(name){
     let $inputName = document.createElement('input');
@@ -45,7 +45,6 @@ export default class Menu {
     $btnSearch.addEventListener('click', (event) =>{
       event.preventDefault();
       this._listar();
-      // this._teste();
     });
 
     let $inputSearch = $header.querySelector('#input-search');
@@ -57,12 +56,9 @@ export default class Menu {
     });
   }
 
-  _teste(){
-    console.log(this._$menuElements.uiFood('teste'));
-  }
 
   _buscar(nome){
-    $.get("http://localhost:3000/menu/?name="+nome, function (data) {
+    $.get(env.APP_URL + "menu/?name="+nome, function (data) {
       console.log(data)
     })
   }
@@ -73,10 +69,10 @@ export default class Menu {
     let dados = null;
 
     if (inputValue !== '') {
-      $.get("http://localhost:3000/menu/"+inputValue, (item) => this._criaUmItem(item));
+      $.get(env.APP_URL+"menu/"+inputValue, (item) => this._criaUmItem(item));
     } else {
       // Swal.fire('Não inseriu um valor');
-      $.get("http://localhost:3000/menu/", (itens) => this._criaVariosItens(itens));
+      $.get(env.APP_URL+"menu/", (itens) => this._criaVariosItens(itens));
     }
   };
 
@@ -92,3 +88,4 @@ export default class Menu {
     });
   }
 }
+

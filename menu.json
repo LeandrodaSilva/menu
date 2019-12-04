@@ -1,4 +1,5 @@
-{"menu": [
+{
+  "menu": [
     {
       "id": 1,
       "imagePath": "assets/img/foods/cupcake.png",
@@ -47,5 +48,5 @@
       "price": 4.5,
       "restaurantId": "burger-house"
     }
-]
+  ]
 }
