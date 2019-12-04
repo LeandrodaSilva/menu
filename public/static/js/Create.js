@@ -2,10 +2,23 @@ import { env } from "./env.js";
 import MenuObject from "./MenuObject.js";
 import { toBase64 } from "./utils.js";
 
-export class CreateTemplate {
+export class CreateForm {
+  imagePath = null;
+  name = null;
+  description = null;
+  price = null;
+  restaurantId = null;
+  btnEnviar = null;
 
+  constructor($form = null) {
+    this.imagePath = $form.querySelector('#imagePath');
+    this.name = $form.querySelector('#name');
+    this.description = $form.querySelector('#description');
+    this.price = $form.querySelector('#price');
+    this.restaurantId = $form.querySelector('#restaurantId');
+    this.btnEnviar = $form.querySelector('#enviar');
+  }
 }
-
 
 export default class Create {
   /**
@@ -21,9 +34,16 @@ export default class Create {
    */
   _menu = null;
 
+  /**
+   *
+   * @type {CreateForm}
+   * @private
+   */
+  _formObj = null;
+
   constructor($form) {
     this._$form = $form;
-
+    this._formObj = new CreateForm($form);
     this._startEvents();
   }
 
@@ -33,13 +53,24 @@ export default class Create {
       e.preventDefault();
       this._saveFood();
     });
+    this._$form.addEventListener('input', () => {
+      this._formObj.imagePath.checkValidity()
+      && this._formObj.name.checkValidity()
+      && this._formObj.description.checkValidity()
+      && this._formObj.restaurantId.checkValidity()
+      && this._formObj.price.checkValidity()
+      ? this._formObj.btnEnviar.removeAttribute('disabled')
+      : this._formObj.btnEnviar.setAttribute('disabled', 'true');
+    });
   }
 
   async _saveFood() {
     this._menu = new MenuObject(this._$form);
-    await toBase64(this._menu.imagePath).then(data => {
+    this._menu.imagePath
+    ? await toBase64(this._menu.imagePath).then(data => {
       this._menu.imagePath = data;
-    });
+    })
+    : null ;
     $.post( env.APP_URL+'menu', {
       imagePath: this._menu.imagePath,
       name: this._menu.name,
