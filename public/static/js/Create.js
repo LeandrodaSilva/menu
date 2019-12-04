@@ -24,7 +24,6 @@ export default class Create {
   constructor($form) {
     this._$form = $form;
 
-
     this._startEvents();
   }
 
@@ -48,11 +47,21 @@ export default class Create {
       price: this._menu.price,
       restaurantId: this._menu.restaurantId,
     })
-    .done(function() {
-      alert('foi');
+    .done(() => {
+      Swal.fire({
+        title: 'Item Salvo!',
+        text: 'A comida foi salva.',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      })
     })
-    .fail(function() {
-      alert( "error" );
+    .fail(() => {
+      Swal.fire({
+        title: 'Erro!',
+        text: 'Não foi possível salvar.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      })
     });
   }
 }
