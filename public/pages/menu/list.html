@@ -17,7 +17,7 @@
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <title>Menu - Início</title>
+    <title>Menu - Listagem</title>
 </head>
 <body>
     <header id="header">
@@ -40,13 +40,13 @@
                         <a class="nav-link" href="/">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/menu/list.html">Listar</a>
+                        <a class="nav-link active" href="list.html">Listar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/menu/create.html">Cadastrar</a>
+                        <a class="nav-link" href="create.html">Cadastrar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/menu/edit.html">Editar</a>
+                        <a class="nav-link" href="edit.html">Editar</a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
@@ -63,22 +63,17 @@
         </nav>
     </header>
 
-    <main>
-        <h1>Tela principal</h1>
-    </main>
+<main>
+    <h1>Tela principal</h1>
+</main>
 
-    <div id="listagem"></div>
+<div id="listagem"></div>
 
-    <script type="module">
-        import Routes from "./static/js/Routes.js";
-        import Menu from "./static/js/Menu.js";
-
-        new Routes(
-            document.getElementById('header')
-        );
-        new Menu(
-          document.querySelector('#listagem'),
-          document.querySelector('#header'))
-    </script>
+<script type="module">
+    // import Menu from "./static/js/Menu.js";
+    // new Menu(
+    //     document.querySelector('#listagem'),
+    //     document.querySelector('#header'))
+</script>
 </body>
 </html>
