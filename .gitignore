@@ -1,0 +1,14 @@
+# Created by .ignore support plugin (hsz.mobi)
+/.idea/
+.idea/.gitignore
+.idea/codeStyles/
+.idea/codestream.xml
+.idea/dbnavigator.xml
+.idea/jsLibraryMappings.xml
+.idea/menu.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+menu.json
+public/
+run.sh

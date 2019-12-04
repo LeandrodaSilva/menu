@@ -1,0 +1,51 @@
+{"menu": [
+    {
+      "id": 1,
+      "imagePath": "assets/img/foods/cupcake.png",
+      "name": "Cup Cake",
+      "description": "Cup Cake recheado de Doce de Leite",
+      "price": 8.7,
+      "restaurantId": "bread-bakery"
+    },
+    {
+      "id": 2,
+      "imagePath": "assets/img/foods/donut.png",
+      "name": "Donut",
+      "description": "Coberto com chantilly",
+      "price": 2.5,
+      "restaurantId": "bread-bakery"
+    },
+    {
+      "id": "bread",
+      "imagePath": "assets/img/foods/bread.png",
+      "name": "Pão Artesanal Italiano",
+      "description": "Pão artesanal com queijos italianos",
+      "price": 15.9,
+      "restaurantId": "bread-bakery"
+    },
+    {
+      "id": 3,
+      "imagePath": "assets/img/foods/burger.png",
+      "name": "Classic Burger",
+      "description": "O clássico. Não tem como errar.",
+      "price": 18.5,
+      "restaurantId": "burger-house"
+    },
+    {
+      "id": 4,
+      "imagePath": "assets/img/foods/fries.png",
+      "name": "Batatas Fritas",
+      "description": "Batatas fritas crocantes",
+      "price": 5.5,
+      "restaurantId": "burger-house"
+    },
+    {
+      "id": 5,
+      "imagePath": "assets/img/foods/coke.png",
+      "name": "Refrigerante",
+      "description": "O refri mais gelado da cidade.",
+      "price": 4.5,
+      "restaurantId": "burger-house"
+    }
+]
+}
