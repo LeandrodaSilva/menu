@@ -19,7 +19,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <link rel="stylesheet"
           href="../../static/css/styles.css">
-    <title>Foods - Cadastrar</title>
+    <title>Foods - Editar</title>
 </head>
 <body>
 <header id="header">
@@ -63,13 +63,110 @@
             <div class="container">
                 <div id="lista" class="row">
                 </div>
+                <div id="modalEdit"
+                     class="modal fade"
+                     tabindex="-1"
+                     role="dialog"
+                     aria-labelledby="exampleModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Editar</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <form id="formulario">
+                                        <div class="row justify-content-center">
+                                            <div class="form-group row col-10">
+                                                <label for="name"
+                                                       class="col-4 col-form-label">Nome do alimento *</label>
+                                                <div class="col-7">
+                                                    <input id="name"
+                                                           type="text"
+                                                           class="form-control"
+                                                           placeholder="Insira o nome"
+                                                           maxlength="32"
+                                                           required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row col-10">
+                                                <label for="imagePath"
+                                                       class="col-4 col-form-label">Imagem do alimento *</label>
+                                                <div class="col-7">
+                                                    <input id="imagePath"
+                                                           type="file"
+                                                           accept="image/*"
+                                                           class="form-control"
+                                                           required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row col-10">
+                                                <label for="description"
+                                                       class="col-4 col-form-label">Descrição do alimento *</label>
+                                                <div class="col-7">
+                                <textarea id="description"
+                                          class="form-control"
+                                          placeholder="Insira a descrição"
+                                          maxlength="250"
+                                          required></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row col-10">
+                                                <label for="restaurantId"
+                                                       class="col-4 col-form-label">Restaurante *</label>
+                                                <div class="col-7">
+                                                    <input id="restaurantId"
+                                                           type="text"
+                                                           class="form-control"
+                                                           placeholder="Insira o nome do restaurante"
+                                                           maxlength="32"
+                                                           required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row col-10">
+                                                <label for="price"
+                                                       class="col-4 col-form-label">Preço *</label>
+                                                <div class="col-7">
+                                                    <input id="price"
+                                                           type="number"
+                                                           class="form-control"
+                                                           step="0.01"
+                                                           min="0.00"
+                                                           placeholder="Insira o valor"
+                                                           required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button"
+                                                    class="btn btn-secondary"
+                                                    data-dismiss="modal">Fechar</button>
+                                            <button id="enviar"
+                                                    type="submit"
+                                                    class="btn btn-primary"
+                                                    title="Preencha todos os campos para salvar">Salvar mudanças</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </main>
 <script type="module">
   import Edit from "../../static/js/Edit.js";
-  new Edit(document.getElementById('lista'));
+  new Edit(
+      document.getElementById('lista'),
+      document.getElementById('formulario')
+  );
 </script>
 </body>
 </html>
