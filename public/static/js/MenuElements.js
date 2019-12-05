@@ -71,12 +71,19 @@ export default class MenuElements{
     $cardImg.classList.add('card-img-top');
     $cardImg.setAttribute('src', food.imagePath);
     $cardImg.setAttribute('alt', food.name);
+    $cardImg.setAttribute('data-id', food.id);
 
     let $btnEdit = document.createElement('buttom');
     $btnEdit.textContent = 'Editar';
     $btnEdit.classList.add('btn', 'btn-primary');
     $btnEdit.setAttribute('data-toggle', 'modal');
     $btnEdit.setAttribute('data-target', '#modalEdit');
+    $btnEdit.setAttribute('data-id', food.id);
+
+    let $btnDelete = document.createElement('buttom');
+    $btnDelete.textContent = 'Excluir';
+    $btnDelete.classList.add('btn', 'btn-danger');
+    $btnDelete.setAttribute('data-id', food.id);
 
     let $cardBody = document.createElement('div');
     $cardBody.classList.add('card-body');
@@ -87,19 +94,21 @@ export default class MenuElements{
     let $cardTittle = document.createElement('h5');
     $cardTittle.textContent = food.name;
     $cardTittle.classList.add('card-tittle');
-    $cardTittle.setAttribute('data-id', food.id);
 
     let $div = document.createElement('div');
     $div.classList.add('col');
+    $div.id = 'card-menu-'+food.id;
+
 
     $cardBody.appendChild($cardTittle);
     $cardBody.appendChild($cardText);
     $cardBody.appendChild($btnEdit);
+    $cardBody.appendChild($btnDelete);
     $cardDiv.appendChild($cardImg);
     $cardDiv.appendChild($cardBody);
 
     $div.appendChild($cardDiv);
-    cb($btnEdit, food);
+    cb($btnEdit, $btnDelete);
     return $div;
   }
 }
