@@ -17,6 +17,8 @@
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <link rel="stylesheet"
+          href="../../static/css/styles.css">
     <title>Menu - Listagem</title>
 </head>
 <body>
@@ -49,25 +51,17 @@
                         <a class="nav-link" href="edit.html">Editar</a>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input id="input-search"
-                           class="form-control mr-sm-2"
-                           type="search"
-                           placeholder="Search"
-                           aria-label="Search">
-                    <button id="btn-search"
-                            class="btn btn-outline-success my-2 my-sm-0"
-                            type="submit">Search</button>
-                </form>
             </div>
         </nav>
     </header>
 
-<main>
-    <h1>Tela principal</h1>
-</main>
-
-<div id="listagem"></div>
+    <main class="container">
+        <div class="row d-flex justify-content-center">
+            <div id="content" class="col-11">
+                <h1>Tela de listagem</h1>
+            </div>
+        </div>
+    </main>
 
 <script type="module">
     // import Menu from "./static/js/Menu.js";

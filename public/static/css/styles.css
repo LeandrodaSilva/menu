@@ -3,9 +3,13 @@
 }
 
 input:invalid, textarea:invalid {
-    border: 3px solid red;
+    border: 3px solid red !important;
 }
 
 input:valid, textarea:valid {
-    border: 3px solid black;
+    border: 3px solid black !important;
+}
+
+button:disabled{
+    opacity: 30% !important;
 }

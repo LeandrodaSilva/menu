@@ -1,6 +1,7 @@
 import { env } from "./env.js";
 import MenuObject from "./MenuObject.js";
 import { toBase64 } from "./utils.js";
+import { Toast } from "./Toast.js";
 
 export class CreateForm {
   imagePath = null;
@@ -65,44 +66,34 @@ export default class Create {
   }
 
   async _saveFood() {
-    const Toast = Swal.mixin({
-      toast: true,
-      position: 'top-end',
-      showConfirmButton: false,
-      timer: 3000,
-      timerProgressBar: true,
-      onOpen: (toast) => {
-        toast.addEventListener('mouseenter', Swal.stopTimer);
-        toast.addEventListener('mouseleave', Swal.resumeTimer);
-      }
-    });
-
     this._menu = new MenuObject(this._$form);
     this._menu.imagePath
     ? await toBase64(this._menu.imagePath).then(data => {
       this._menu.imagePath = data;
     })
     : null ;
-    $.post( env.APP_URL+'menu', {
-      imagePath: this._menu.imagePath,
-      name: this._menu.name,
-      description: this._menu.description,
-      price: this._menu.price,
-      restaurantId: this._menu.restaurantId,
-    })
-    .done(() => {
-      Toast.fire({
+    $.ajax({
+      type: "POST",
+      url: env.APP_URL+'menu',
+      async: true,
+      data: {
+        imagePath: this._menu.imagePath,
+        name: this._menu.name,
+        description: this._menu.description,
+        price: this._menu.price,
+        restaurantId: this._menu.restaurantId,
+      },
+      success: () => Toast.fire({
         icon: 'success',
         title: 'A comida foi salva.'
-      });
-    })
-    .fail(() => {
-      Swal.fire({
+      }),
+      error: () => Swal.fire({
         title: 'Erro!',
         text: 'Não foi possível salvar.',
         icon: 'error',
         confirmButtonText: 'OK'
-      })
+      }),
+      dataType: 'json'
     });
   }
 }
