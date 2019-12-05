@@ -10,6 +10,6 @@ export default class MenuObject {
     this.name = $form.querySelector('#name').value;
     this.description = $form.querySelector('#description').value;
     this.price = $form.querySelector('#price').value;
-    this.restaurantId = $form.querySelector('#name').value;
+    this.restaurantId = $form.querySelector('#restaurantId').value;
   }
 }

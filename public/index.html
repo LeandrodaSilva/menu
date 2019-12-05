@@ -103,22 +103,13 @@
                 </a>
 
             </div>
-
-            <div>
-                <img src="assets/img/foods/cupcake.jpg" class="img-fluid" alt="Responsive image">
-            </div>
         </fieldset>
     </main>
 
     <div id="listagem"></div>
 
     <script type="module">
-        import Routes from "./static/js/Routes.js";
         import Menu from "./static/js/Menu.js";
-
-        new Routes(
-            document.getElementById('header')
-        );
         new Menu(
           document.querySelector('#listagem'),
           document.querySelector('#header'))
