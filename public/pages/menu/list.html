@@ -18,10 +18,10 @@
             crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <link rel="stylesheet"
-          href="../../static/css/styles.css">
+          href="../../static/css/listStyles.css">
     <title>Menu - Listagem</title>
 </head>
-<body>
+<body onload="loadItens()">
     <header id="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">Menu</a>
@@ -58,16 +58,43 @@
     <main class="container">
         <div class="row d-flex justify-content-center">
             <div id="content" class="col-11">
-                <h1>Tela de listagem</h1>
+                <div id="content-header">
+                    <h1>Tela de listagem</h1>
+
+                    <form class="form-inline my-2 my-lg-0" id="form" >
+                            <input type="text" id="search" placeholder="Pesquisar"/>
+                            <button id="btn-search"
+                                    class="btn btn-outline-success my-2 my-sm-0"
+                                    type="submit">Search</button>
+                        </form>
+
+                   
+                </div>
+
+                <ul id="listItens">
+                </ul>
+
+                <div id="footer">
+                        <div id="blank"></div>
+
+                        <button id="btn-back"
+                        class="btn btn-outline-success my-2 my-sm-0"
+                        type="submit">Página anterior</button>
+
+                        <button id="btn-next"
+                            class="btn btn-outline-success my-2 my-sm-0"
+                            type="submit">Próxima página</button>
+                </div>
+                
             </div>
         </div>
     </main>
 
-<script type="module">
-    // import Menu from "./static/js/Menu.js";
-    // new Menu(
-    //     document.querySelector('#listagem'),
-    //     document.querySelector('#header'))
-</script>
+<!-- <script type="module">
+    // import List from "./static/js/List.js";
+    new List(document.querySelector('.container'));
+</script> -->
+
+<script src="../../static/js/List.js"></script>
 </body>
 </html>
