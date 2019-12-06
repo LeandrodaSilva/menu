@@ -32,7 +32,6 @@ button:disabled{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 16px;
-  list-style: none;
   width: 100%;
 }
 

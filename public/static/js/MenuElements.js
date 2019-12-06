@@ -95,6 +95,11 @@ export default class MenuElements{
     $cardTittle.textContent = food.name;
     $cardTittle.classList.add('card-tittle');
 
+    let $price = document.createElement('span');
+    $price.className = 'price';
+    $price.style = 'margin-left: 20px;';
+    $price.textContent = 'R$: '+food.price;
+
     let $div = document.createElement('div');
     $div.classList.add('col');
     $div.id = 'card-menu-'+food.id;
@@ -104,6 +109,7 @@ export default class MenuElements{
     $cardBody.appendChild($cardText);
     $cardBody.appendChild($btnEdit);
     $cardBody.appendChild($btnDelete);
+    $cardBody.appendChild($price);
     $cardDiv.appendChild($cardImg);
     $cardDiv.appendChild($cardBody);
 
