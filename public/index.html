@@ -18,10 +18,10 @@
             crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <link rel="stylesheet"
-          href="../../static/css/listStyles.css">
+          href="static/css/listStyles.css">
     <title>Menu - Listagem</title>
 </head>
-<body onload="loadItens()">
+<body>
     <header id="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="/">Home</a>
@@ -63,13 +63,10 @@
                             <button id="btn-search"
                                     class="btn btn-outline-success my-2 my-sm-0"
                                     type="submit">Search</button>
-                        </form>
-
-                   
+                    </form>
                 </div>
 
-                <ul id="listItens">
-                </ul>
+                <ul id="listItens"></ul>
 
                 <div id="footer">
                         <div id="blank"></div>
@@ -86,7 +83,9 @@
             </div>
         </div>
     </main>
-
-<script src="../../static/js/List.js"></script>
+<script type="module">
+    import List from "./static/js/List.js";
+    new List();
+</script>
 </body>
 </html>

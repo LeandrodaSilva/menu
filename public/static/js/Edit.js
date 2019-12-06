@@ -125,6 +125,7 @@ export default class Edit {
     $card.querySelector('.card-img-top').setAttribute('src', data.imagePath);
     $card.querySelector('.card-tittle').textContent = data.name;
     $card.querySelector('p').textContent = data.description;
+    $card.querySelector('.price').textContent = data.price;
   }
 }
 
